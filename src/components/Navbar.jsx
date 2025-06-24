@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="flex items-center justify-between px-6 bg-white shadow-sm sticky top-0 z-50">
       <div className="flex items-center space-x-8">
         <img
-          src="src/images/219508067-removebg-preview.png"
+          src="/219508067-removebg-preview.png"
           alt="Logo"
           className="w-32 h-auto"
         />

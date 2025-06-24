@@ -6,7 +6,7 @@ function Home() {
   return (
     <div id="home">
       <Navbar/>
-      <div className="bg-[url('src/images/homeBg.jpg')] flex flex-col bg-cover bg-center h-120 w-full items-center justify-center">
+      <div className="bg-[url('/homeBg.jpg')] flex flex-col bg-cover bg-center h-120 w-full items-center justify-center">
       <h1 className="text-white text-6xl font-semibold pb-5">
             Hi, I'm Tinsae Jembere
           </h1>
