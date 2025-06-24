@@ -51,7 +51,7 @@ function About() {
             className="rounded-lg shadow-lg overflow-hidden" 
           >
               <img
-                src="src/images/image.png" 
+                src="/image.png" 
                 alt="About Me"
                 className="w-full h-auto object-cover" 
               />
