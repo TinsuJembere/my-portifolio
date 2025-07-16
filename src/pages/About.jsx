@@ -21,26 +21,12 @@ function About() {
               transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
               className="text-gray-600 leading-relaxed"
             >
-              I'm a passionate software developer with over a decade of experience in crafting innovative solutions for clients worldwide.
-            </motion.p>
+              I'm a Full-Stack Web Developer with experience building modern, responsive web applications from front to back. I work with technologies like JavaScript, TypeScript, React, Node.js, Express, MongoDB, and SQL.
 
-            <div className="space-y-4">
-              <div className="space-y-1">
-                <h3 className="text-lg font-semibold text-black">Innovation</h3>
-                <p className="text-gray-600 leading-relaxed">My journey began with a fascination for coding, which grew into a full-fledged career in the tech industry.</p>
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg font-semibold text-black">Customer-Centric</h3>
-                <p className="text-gray-600 leading-relaxed">I've worked with companies ranging from startups to Fortune 500 firms, always striving to deliver exceptional results tailored to their needs.</p>
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg font-semibold text-black">Expertise</h3>
-                <p className="text-gray-600 leading-relaxed">Over the years, I've honed my skills in web development, mobile app creation, and cloud technologies, always staying ahead of industry trends.</p>
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg font-semibold text-black">Integrity</h3>
-                <p className="text-gray-600 leading-relaxed">Transparency and honesty are the cornerstones of my approach, ensuring clients feel connected and confident throughout the development process.</p>
-              </div>
+I enjoy creating clean, user-friendly interfaces and writing efficient, scalable backend code. I’m comfortable working across the full development stack—from designing APIs to deploying applications.
+
+I'm passionate about clean code, learning new technologies, and building products that solve real problems. Outside of coding, I enjoy music and taking long walks to clear my mind and spark creativity.
+            </motion.p>
             </div>
           </div>
 
