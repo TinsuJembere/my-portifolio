@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const SocialMedia = () => {
     return (
-        <section className="bg-white py-16">
+        <section className="bg-[#0c0f11] text-white py-16">
             <div className="container mx-auto px-4 md:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -11,7 +11,7 @@ const SocialMedia = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center"
                 >
-                    <h2 className="text-2xl md:text-3xl font-semibold text-black mb-6">
+                    <h2 className="text-2xl md:text-3xl font-semibold mb-6">
                         Follow me on social media
                     </h2>
                     <div className="flex justify-center items-center gap-6">

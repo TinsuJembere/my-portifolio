@@ -5,47 +5,28 @@ import {
   faFacebook,
   faLinkedin,
   faYoutube,
+  faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
-    <footer className="bg-white py-4 border-t-1 border-indigo-500">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+    <footer className="bg-[#0c0f11]" id="contact">
+      <div className="container mx-auto max-w-[47.7rem] py-4 border-t-1 border-[#a0a0a0] px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
         {/* Left Side: Copyright and Links */}
-        <div className="text-center md:text-left text-gray-600 text-sm order-2 md:order-1 mt-4 md:mt-0">
-          © {new Date().getFullYear()} Brand, Inc. ·
-          <a
-            href="/privacy"
-            className="text-gray-600 hover:text-blue-500 transition-colors duration-200 ml-1"
-          >
-            Privacy
-          </a>{" "}
-          ·
-          <a
-            href="/terms"
-            className="text-gray-600 hover:text-blue-500 transition-colors duration-200 ml-1"
-          >
-            Terms
-          </a>{" "}
-          ·
-          <a
-            href="/sitemap"
-            className="text-gray-600 hover:text-blue-500 transition-colors duration-200 ml-1"
-          >
-            Sitemap
-          </a>
+        <div className="text-center md:text-left text-white text-sm order-2 md:order-1 mt-4 md:mt-0">
+          tinsaejembere4@gmail.com
         </div>
 
         {/* Right Side: Social Media Icons */}
         <div className="flex justify-center md:justify-end items-center gap-4 order-1 md:order-2">
           <a
-            href="https://twitter.com" 
+            href="https://t.me/I_surrender1920" 
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
           >
             <FontAwesomeIcon
-              icon={faTwitter}
+              icon={faTelegram}
               size="lg"
               className="text-blue-400 transition-colors duration-300"
             />
@@ -63,7 +44,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://www.linkedin.com" 
+            href="https://www.linkedin.com/in/tinsae-jembere-8157642b9" 
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -75,7 +56,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://www.youtube.com" 
+            href="https://www.youtube.com/@TinsaeJembere" 
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"

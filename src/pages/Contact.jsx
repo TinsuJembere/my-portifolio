@@ -29,7 +29,7 @@ const Contact = () => {
 
   return (
     <div className="overflow-hidden px-6" id="contact">
-      <div className="bg-white py-16 rounded-lg shadow-lg">
+      <div className="bg-[#0c0f11] text-[#a0a0a0] py-16 rounded-lg shadow-lg">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -39,14 +39,14 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <h2 className="text-3xl font-semibold text-gray-800">
+              <h2 className="text-3xl font-semibold">
                 Contact Me
               </h2>
               <form ref={form} onSubmit={sendEmail} className="space-y-4">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-[#a0a0a0]"
                   >
                     Name
                   </label>
@@ -61,7 +61,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-[#a0a0a0]"
                   >
                     Email
                   </label>
@@ -76,7 +76,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-[#a0a0a0]"
                   >
                     Message
                   </label>
@@ -90,7 +90,7 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+                  className="bg-[#a0a0a0] hover:bg-[#a0a0a0] text-black font-bold py-2 px-4 rounded-md"
                 >
                   Submit
                 </button>
