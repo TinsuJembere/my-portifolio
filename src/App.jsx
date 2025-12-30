@@ -1,20 +1,35 @@
-import React from 'react';
-import Home from '../src/pages/Home'
-import About from './pages/About';
-import MyProjects from './pages/Project';
-import SocialMedia from './components/SocialMedia';
-import Contact from './pages/Contact';
-import Footer from './components/Footer';
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const MyProjects = lazy(() => import('./pages/Project'));
+const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
   return (
-  <div className='bg-[#0c0f11]'>
-    <Home/>
-    <MyProjects/>
-    {/* <Contact/>
-    <SocialMedia/> */}
-    <Footer/>
-  </div>
+    <Router>
+      <div className='bg-[#0c0f11]'>
+        <Suspense fallback={
+          <div className="min-h-screen bg-[#0c0f11] flex items-center justify-center text-white">
+            <div className="animate-pulse">Loading...</div>
+          </div>
+        }>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Home />
+                <About />
+                <Services />
+                <MyProjects />
+                <Footer />
+              </>
+            } />
+          </Routes>
+        </Suspense>
+      </div>
+    </Router>
   );
 }
 

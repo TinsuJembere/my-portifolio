@@ -10,19 +10,23 @@ function Navbar() {
   };
 
   return (
-    // Removed bg-opacity-90 and backdrop-blur-sm from the header
-    <header className="fixed w-full z-50 bg-[#0c0f11] pt-5 pb-10">
+    <header className="fixed w-full z-50 bg-[#0c0f11]/95 backdrop-blur-md border-b border-[#a0a0a0]/10 pt-5 pb-10">
       <nav className="container mx-auto max-w-[47.7rem] px-6 flex items-center justify-between">
         {/* Site Title */}
-        <ScrollLink
-          to="home"
-          smooth={true}
-          offset={-70} // Adjust offset if your fixed header height changes
-          duration={300}
-          className="cursor-pointer font-bold text-lg tracking-widest text-[#a0a0a0] uppercase hover:text-white transition-colors duration-150"
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 300 }}
         >
-          Tinsae Jembere
-        </ScrollLink>
+          <ScrollLink
+            to="home"
+            smooth={true}
+            offset={-70}
+            duration={300}
+            className="cursor-pointer font-bold text-lg tracking-widest text-[#a0a0a0] uppercase hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-400 hover:via-indigo-400 hover:to-cyan-400 transition-all duration-300"
+          >
+            Tinsae J.
+          </ScrollLink>
+        </motion.div>
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-6 text-lg text-[#a0a0a0]">
@@ -38,6 +42,34 @@ function Navbar() {
               className="cursor-pointer hover:text-white transition-colors duration-150"
             >
               Home
+            </ScrollLink>
+          </motion.div>
+          <motion.div 
+            whileHover={{ y: -1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <ScrollLink
+              to="about"
+              smooth={true}
+              offset={-70}
+              duration={300}
+              className="cursor-pointer hover:text-white transition-colors duration-150"
+            >
+              About
+            </ScrollLink>
+          </motion.div>
+          <motion.div 
+            whileHover={{ y: -1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <ScrollLink
+              to="services"
+              smooth={true}
+              offset={-70}
+              duration={300}
+              className="cursor-pointer hover:text-white transition-colors duration-150"
+            >
+              Services
             </ScrollLink>
           </motion.div>
           <motion.div 
@@ -69,21 +101,27 @@ function Navbar() {
             </ScrollLink>
           </motion.div>
           <motion.button
-            onClick={() => {
-              const link = document.createElement('a');
-              link.href = '/resume.pdf';
-              link.download = 'Tinsae-Jembere-Resume.pdf';
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}
-            className="bg-[#a0a0a0]/20 hover:bg-[#a0a0a0]/30 text-white px-4 py-2 rounded-md transition-all duration-150 border border-[#a0a0a0]/50"
-            whileHover={{ scale: 1.03, y: -1 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          >
-            Download CV
-          </motion.button>
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/resume.pdf';
+                link.download = 'Tinsae-Jembere-Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              className="relative overflow-hidden bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-cyan-500/20 hover:from-blue-500/30 hover:via-indigo-500/30 hover:to-cyan-500/30 text-white px-4 py-2 rounded-md transition-all duration-300 border border-blue-500/30 hover:border-blue-500/50"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <span className="relative z-10 font-medium">Download CV</span>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-cyan-500/10"
+                initial={{ x: '-100%' }}
+                whileHover={{ x: '100%' }}
+                transition={{ duration: 0.5 }}
+              />
+            </motion.button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -148,14 +186,38 @@ function Navbar() {
           <ul className="list-none p-0 mt-32 flex flex-col items-center gap-5 text-center">
             <li>
               <ScrollLink
-                to="work-experience"
+                to="home"
                 smooth={true}
                 offset={-70}
                 duration={300}
                 onClick={handleLinkClick}
                 className="cursor-pointer text-[#a0a0a0] text-3xl font-semibold hover:text-white transition-colors duration-150"
               >
-                Work Experience
+                Home
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="about"
+                smooth={true}
+                offset={-70}
+                duration={300}
+                onClick={handleLinkClick}
+                className="cursor-pointer text-[#a0a0a0] text-3xl font-semibold hover:text-white transition-colors duration-150"
+              >
+                About
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="services"
+                smooth={true}
+                offset={-70}
+                duration={300}
+                onClick={handleLinkClick}
+                className="cursor-pointer text-[#a0a0a0] text-3xl font-semibold hover:text-white transition-colors duration-150"
+              >
+                Services
               </ScrollLink>
             </li>
             <li>

@@ -4,7 +4,7 @@ function TechItem({ name, icon }) {
   return (
     <button
       type="button"
-      className="group border border-[#a0a0a0]/50 bg-transparent gap-1.5 h-24 text-[#a0a0a0] rounded-lg p-3 flex flex-col items-center justify-center transition-all duration-150 hover:bg-[#a0a0a0]/10 hover:text-white cursor-pointer"
+      className="group border border-[#a0a0a0]/50 bg-transparent gap-1.5 h-24 min-w-[120px] text-[#a0a0a0] rounded-lg p-3 flex flex-col items-center justify-center transition-all duration-150 hover:bg-[#a0a0a0]/10 hover:text-white cursor-pointer"
       style={{ willChange: 'transform' }}
     >
       <img
@@ -16,7 +16,7 @@ function TechItem({ name, icon }) {
         decoding="async"
         className="transition-transform duration-200 group-hover:-translate-y-1"
       />
-      <p>{name}</p>
+      <p className="whitespace-nowrap">{name}</p>
     </button>
   );
 }

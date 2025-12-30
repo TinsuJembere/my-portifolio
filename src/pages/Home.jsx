@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import TechItem from "../components/TechItem";
 import portImage from "../images/portimage.jpg";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function Home() {
   const techStack = [
@@ -17,31 +19,62 @@ function Home() {
   ];
 
   return (
-    <div className="bg-[#0c0f11] min-h-screen text-white  font-['Roboto'] antialiased" id="home">
+    <div className="bg-[#0c0f11] text-white min-h-screen font-['Roboto'] antialiased" id="home">
       <Navbar />
 
       <main className="w-full min-h-screen h-full flex justify-center pb-10 pt-20">
         <div className="h-full w-full max-w-[47.7rem] mx-auto px-6">
           <section id="hero" className="flex flex-col md:flex-row md:items-start gap-10 text-center md:text-left pt-16 pb-20">
             <motion.div 
-              className="relative w-44 h-44 min-w-44 min-h-44 rounded-full overflow-hidden"
+              className="relative w-44 h-44 min-w-44 min-h-44 rounded-full overflow-visible"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               style={{ willChange: 'transform, opacity' }}
             >
-              <div className="absolute inset-0 bg-linear-to-r from-orange-500 via-red-500 to-purple-500 rounded-full p-1">
-                <div className="w-full h-full bg-[#0c0f11] rounded-full">
-                  <img
-                    src={portImage}
-                    width="170"
-                    height="170"
-                    alt="Avatar"
-                    loading="eager"
-                    decoding="async"
-                    className="w-full h-full object-cover rounded-full border-4 border-white"
-                  />
-                </div>
+              {/* Rotating Gradient Border */}
+              <motion.div
+                className="absolute inset-0 rounded-full p-[3px]"
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                style={{
+                  background: "conic-gradient(from 0deg, #3b82f6, #6366f1, #06b6d4, #3b82f6)",
+                }}
+              >
+                <div className="w-full h-full bg-[#0c0f11] rounded-full" />
+              </motion.div>
+              
+              {/* Inner Glow Effect */}
+              <motion.div
+                className="relative w-44 h-44 min-w-44 min-h-44 rounded-full overflow-visible mx-auto md:mx-0"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              
+              {/* Profile Image */}
+              <div className="absolute inset-[6px] rounded-full overflow-hidden z-10">
+                <LazyLoadImage
+                  src={portImage}
+                  width="170"
+                  height="170"
+                  alt="Tinsae Jembere - Fullstack Software Developer"
+                  effect="blur"
+                  decoding="async"
+                  className="w-full h-full object-cover rounded-full"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                />
               </div>
             </motion.div>
             <motion.div 
@@ -51,38 +84,39 @@ function Home() {
               transition={{ duration: 0.3, delay: 0.05, ease: [0.25, 0.46, 0.45, 0.94] }}
               style={{ willChange: 'transform, opacity' }}
             >
-              <h1 className="text-[#a0a0a0] font-bold text-[28px] md:text-[34px] tracking-[0.03em] relative">
+              <h1 className="text-[#a0a0a0] font-bold text-[28px] md:text-[34px] lg:text-[40px] tracking-[0.03em] relative">
                 <motion.span 
                   className="text-white"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.25, delay: 0.1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
                   Hey, I'm Tinsae.
                 </motion.span>{" "}
                 <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.25, delay: 0.15 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
                   I'm a{" "}
                 </motion.span>
                 <br className="block md:hidden"/> 
                 <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.25, delay: 0.2 }}
+                  className="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
-                  Frontend Software Developer.
+                  Fullstack Software Developer.
                 </motion.span>
                 <motion.div 
-                  className="md:absolute md:right-0 md:bottom-1.5 md:whitespace-nowrap inline-block mt-4 md:mt-0 bg-green-600/20 text-green-600 text-sm px-3 py-1 rounded-full hover:bg-green-500/20 hover:text-green-500 transition-colors duration-200"
+                  className="md:absolute md:right-0 md:bottom-1.5 md:whitespace-nowrap inline-block mt-4 md:mt-0 bg-blue-600/20 text-blue-400 text-sm px-3 py-1 rounded-full hover:bg-blue-500/20 hover:text-blue-300 transition-colors duration-200"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.25, delay: 0.25 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <span className="p-1 mb-px mr-1.5 inline-block bg-green-600 rounded-full"></span>
+                  <span className="p-1 mb-px mr-1.5 inline-block bg-blue-500 rounded-full"></span>
                   Open to work
                 </motion.div>
               </h1>
@@ -111,9 +145,9 @@ function Home() {
                     whileHover={{ scale: 1.05, y: -1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
-                    <img
+                    <LazyLoadImage
                       alt="icon"
-                      loading="eager"
+                      effect="blur"
                       width="24"
                       height="24"
                       src="/linkedin-icon.svg"
@@ -129,9 +163,9 @@ function Home() {
                     whileHover={{ scale: 1.05, y: -1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
-                    <img
+                    <LazyLoadImage
                       alt="icon"
-                      loading="eager"
+                      effect="blur"
                       width="20"
                       height="20"
                       src="/github-icon.svg"
@@ -153,29 +187,41 @@ function Home() {
             transition={{ duration: 0.3 }}
             style={{ willChange: 'transform, opacity' }}
           >
-            <motion.h2 
-              className="font-bold text-lg tracking-widest text-white uppercase mb-10"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.25 }}
-            >
-              Tech stack
-            </motion.h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
-              {techStack.map((tech, index) => (
-                <motion.div
-                  key={tech.name}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-20px" }}
-                  transition={{ duration: 0.25, delay: index * 0.03 }}
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  style={{ willChange: 'transform, opacity' }}
-                >
-                  <TechItem name={tech.name} icon={tech.icon} />
-                </motion.div>
-              ))}
+            <motion.h2
+                        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                      >
+                        Tech Stacks
+                      </motion.h2>
+            <div className="overflow-hidden w-full relative">
+              <motion.div
+                className="flex gap-5"
+                animate={{
+                  x: ["0%", "-50%"],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 25,
+                    ease: "linear",
+                  },
+                }}
+                style={{ willChange: 'transform' }}
+              >
+                {/* Render tech stack twice for seamless loop */}
+                {[...techStack, ...techStack].map((tech, index) => (
+                  <div
+                    key={`${tech.name}-${index}`}
+                    className="flex-shrink-0"
+                  >
+                    <TechItem name={tech.name} icon={tech.icon} />
+                  </div>
+                ))}
+              </motion.div>
             </div>
           </motion.section>
         </div>

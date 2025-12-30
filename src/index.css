@@ -10,6 +10,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Force dark mode */
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0c0f11;
+  color: white;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -32,4 +42,33 @@ img {
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
+}
+
+/* Custom gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #f97316, #ef4444, #ec4899, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.3),
+              0 0 40px rgba(239, 68, 68, 0.2),
+              0 0 60px rgba(236, 72, 153, 0.1);
 }
