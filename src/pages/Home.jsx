@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import TechItem from "../components/TechItem";
 import portImage from "../images/portimage.jpg";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function Home() {
   const techStack = [
@@ -19,18 +19,24 @@ function Home() {
   ];
 
   return (
-    <div className="bg-[#0c0f11] text-white min-h-screen font-['Roboto'] antialiased" id="home">
+    <div
+      className="bg-[#0c0f11] text-white min-h-screen font-['Roboto'] antialiased"
+      id="home"
+    >
       <Navbar />
 
       <main className="w-full min-h-screen h-full flex justify-center pb-10 pt-20">
         <div className="h-full w-full max-w-[47.7rem] mx-auto px-6">
-          <section id="hero" className="flex flex-col md:flex-row md:items-start gap-10 text-center md:text-left pt-16 pb-20">
-            <motion.div 
+          <section
+            id="hero"
+            className="flex flex-col md:flex-row md:items-start gap-10 text-center md:text-left pt-16 pb-20"
+          >
+            <motion.div
               className="relative w-44 h-44 min-w-44 min-h-44 rounded-full overflow-visible"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-              style={{ willChange: 'transform, opacity' }}
+              style={{ willChange: "transform, opacity" }}
             >
               {/* Rotating Gradient Border */}
               <motion.div
@@ -39,15 +45,16 @@ function Home() {
                 transition={{
                   duration: 8,
                   repeat: Infinity,
-                  ease: "linear"
+                  ease: "linear",
                 }}
                 style={{
-                  background: "conic-gradient(from 0deg, #3b82f6, #6366f1, #06b6d4, #3b82f6)",
+                  background:
+                    "conic-gradient(from 0deg, #3b82f6, #6366f1, #06b6d4, #3b82f6)",
                 }}
               >
                 <div className="w-full h-full bg-[#0c0f11] rounded-full" />
               </motion.div>
-              
+
               {/* Inner Glow Effect */}
               <motion.div
                 className="relative w-44 h-44 min-w-44 min-h-44 rounded-full overflow-visible mx-auto md:mx-0"
@@ -58,10 +65,10 @@ function Home() {
                 transition={{
                   duration: 3,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
               />
-              
+
               {/* Profile Image */}
               <div className="absolute inset-[6px] rounded-full overflow-hidden z-10">
                 <LazyLoadImage
@@ -77,39 +84,55 @@ function Home() {
                 />
               </div>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="flex flex-col items-center md:items-start gap-6"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: 0.05, ease: [0.25, 0.46, 0.45, 0.94] }}
-              style={{ willChange: 'transform, opacity' }}
+              transition={{
+                duration: 0.3,
+                delay: 0.05,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
+              style={{ willChange: "transform, opacity" }}
             >
               <h1 className="text-[#a0a0a0] font-bold text-[28px] md:text-[34px] lg:text-[40px] tracking-[0.03em] relative">
-                <motion.span 
+                <motion.span
                   className="text-white"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.1,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
                 >
                   Hey, I'm Tinsae.
                 </motion.span>{" "}
                 <motion.span
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.15,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
                 >
                   I'm a{" "}
                 </motion.span>
-                <br className="block md:hidden"/> 
+                <br className="block md:hidden" />
                 <motion.span
                   className="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.2,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
                 >
                   Fullstack Software Developer.
                 </motion.span>
-                <motion.div 
+                <motion.div
                   className="md:absolute md:right-0 md:bottom-1.5 md:whitespace-nowrap inline-block mt-4 md:mt-0 bg-blue-600/20 text-blue-400 text-sm px-3 py-1 rounded-full hover:bg-blue-500/20 hover:text-blue-300 transition-colors duration-200"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -120,12 +143,12 @@ function Home() {
                   Open to work
                 </motion.div>
               </h1>
-              <motion.div 
+              <motion.div
                 className="w-full flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.15 }}
-                style={{ willChange: 'transform, opacity' }}
+                style={{ willChange: "transform, opacity" }}
               >
                 <motion.a
                   target="_blank"
@@ -179,35 +202,23 @@ function Home() {
           </section>
 
           {/* Tech Stack Section */}
-          <motion.section 
+          <motion.section
             className="flex flex-col mt-7"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.3 }}
-            style={{ willChange: 'transform, opacity' }}
+            style={{ willChange: "transform, opacity" }}
           >
-<<<<<<< HEAD
             <motion.h2
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                      >
-                        Tech Stacks
-                      </motion.h2>
-=======
-            <motion.h2 
-              className="font-bold text-lg tracking-widest text-white uppercase mb-10"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.25 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Tech stack
+              Tech Stacks
             </motion.h2>
->>>>>>> a2bfdce92b6eca47e58cddaa5723073e43cd26d3
             <div className="overflow-hidden w-full relative">
               <motion.div
                 className="flex gap-5"
@@ -222,14 +233,11 @@ function Home() {
                     ease: "linear",
                   },
                 }}
-                style={{ willChange: 'transform' }}
+                style={{ willChange: "transform" }}
               >
                 {/* Render tech stack twice for seamless loop */}
                 {[...techStack, ...techStack].map((tech, index) => (
-                  <div
-                    key={`${tech.name}-${index}`}
-                    className="flex-shrink-0"
-                  >
+                  <div key={`${tech.name}-${index}`} className="flex-shrink-0">
                     <TechItem name={tech.name} icon={tech.icon} />
                   </div>
                 ))}
