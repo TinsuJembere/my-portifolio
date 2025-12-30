@@ -187,6 +187,7 @@ function Home() {
             transition={{ duration: 0.3 }}
             style={{ willChange: 'transform, opacity' }}
           >
+<<<<<<< HEAD
             <motion.h2
                         className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent"
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -196,6 +197,17 @@ function Home() {
                       >
                         Tech Stacks
                       </motion.h2>
+=======
+            <motion.h2 
+              className="font-bold text-lg tracking-widest text-white uppercase mb-10"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.25 }}
+            >
+              Tech stack
+            </motion.h2>
+>>>>>>> a2bfdce92b6eca47e58cddaa5723073e43cd26d3
             <div className="overflow-hidden w-full relative">
               <motion.div
                 className="flex gap-5"
