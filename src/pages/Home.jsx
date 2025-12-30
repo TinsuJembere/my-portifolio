@@ -73,7 +73,7 @@ function Home() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.25, delay: 0.2 }}
                 >
-                  Frontend Software Developer.
+                  Fullstack Software Developer.
                 </motion.span>
                 <motion.div 
                   className="md:absolute md:right-0 md:bottom-1.5 md:whitespace-nowrap inline-block mt-4 md:mt-0 bg-green-600/20 text-green-600 text-sm px-3 py-1 rounded-full hover:bg-green-500/20 hover:text-green-500 transition-colors duration-200"
