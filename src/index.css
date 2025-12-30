@@ -1,9 +1,35 @@
 @import "tailwindcss";
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .active-link {
-    color: #4f46e5; 
-    border-bottom: 2px solid #4f46e5;
-    padding-bottom: 4px;
-    font-weight: 500;
-  }
+  color: #4f46e5; 
+  border-bottom: 2px solid #4f46e5;
+  padding-bottom: 4px;
+  font-weight: 500;
+}
+
+/* Performance optimizations */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* GPU acceleration for animations */
+[data-framer-component] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
