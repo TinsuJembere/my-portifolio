@@ -162,20 +162,32 @@ function Home() {
             >
               Tech stack
             </motion.h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
-              {techStack.map((tech, index) => (
-                <motion.div
-                  key={tech.name}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-20px" }}
-                  transition={{ duration: 0.25, delay: index * 0.03 }}
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  style={{ willChange: 'transform, opacity' }}
-                >
-                  <TechItem name={tech.name} icon={tech.icon} />
-                </motion.div>
-              ))}
+            <div className="overflow-hidden w-full relative">
+              <motion.div
+                className="flex gap-5"
+                animate={{
+                  x: ["0%", "-50%"],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 25,
+                    ease: "linear",
+                  },
+                }}
+                style={{ willChange: 'transform' }}
+              >
+                {/* Render tech stack twice for seamless loop */}
+                {[...techStack, ...techStack].map((tech, index) => (
+                  <div
+                    key={`${tech.name}-${index}`}
+                    className="flex-shrink-0"
+                  >
+                    <TechItem name={tech.name} icon={tech.icon} />
+                  </div>
+                ))}
+              </motion.div>
             </div>
           </motion.section>
         </div>
