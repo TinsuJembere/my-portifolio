@@ -6,6 +6,7 @@ const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const MyProjects = lazy(() => import('./pages/Project'));
 const Footer = lazy(() => import('./components/Footer'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
                 <About />
                 <Services />
                 <MyProjects />
+                <Contact/>
                 <Footer />
               </>
             } />
