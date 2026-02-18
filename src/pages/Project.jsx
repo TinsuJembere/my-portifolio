@@ -22,7 +22,7 @@ const projects = [
     title: "GebeyaAlert",
     description:
       "A full-stack web application that helps farmers track crop prices across different markets and receive alerts when prices reach their target goals.",
-    url: "https://gebeya-alert.vercel.app/",
+    url: "https://gebeya-alert-gg73.vercel.app/",
     imageUrl: gebeyaImage,
     tech: ["React", "FastAPI", "PostgreSQL"],
   },
